@@ -16,27 +16,19 @@ IP 주소는 네트워크 환경에서 컴퓨터(노드) 간 통신하기 위해
 
 **IPv4 주소**
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F36195fc0-e486-44e6-aa3c-185ca64ce685%2FUntitled.png?table=block&id=a3fa3067-ae7c-4450-a633-2f3e429aba56&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 IP 주소는 보통 4개의 10진수로 이루어진 IPv4 체계를 택하고 있는데, 각 10진수는 8자의 2진수로 변환되며, 총 32개의 0과 1로 이루어져 있다. 즉 0.0.0.0부터 255.255.255.255까지 약 42억 개의 주소를 표현할 수 있다.
 
 **IPv6 주소**
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3e920776-2310-4779-b9a5-4cc4e4e013f8%2FUntitled.png?table=block&id=86e67aa5-c45f-474b-9921-d724f0bac289&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
 
 IP 주소라는 개념이 처음 생겼을 당시에는 지금처럼 네트워킹이 가능한 장비의 종류가 다양하지 않았지만, 기술이 발전하고 한 사람이 가지는 네트워킹 단말기가 증가하면서 IPv4 주소의 수가 부족해졌다. 이를 해결하기 위해 주소 길이를 128 비트로 늘려 사용 가능한 주소의 개수를 2의 128제곱 개 늘린 IPv6 주소가 등장했다.
 
 IPv6 주소는 보통 두 자리 16진수 여덟 개를 쓰고 각각 `:` 기호로 구분한다.
 
-**IPv4 vs IPv6**
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fff7c766d-b1e8-4bb6-9420-a7e79b2aa05e%2FUntitled.png?table=block&id=298b66f4-cbda-4a21-83c7-8721846e0967&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 ## IP 주소의 클래스란?
 
 IP 주소에는 클래스라는 개념이 있고 클래스는 하나의 IP 주소에서 네트워크 주소(ID)와 호스트 주소(ID)를 나누는 방법이자 약속이다. 네트워크 주소는 모든 호스트들을 관리하기가 어렵기 때문에 네트워크에 범위를 그룹(호스트의 집합)으로 지정해 어떤 네트워크인지 나타내고, 호스트 주소는 네트워크 그룹 내에서 어느 컴퓨터인지를 나타낸다. IP 주소를 여러 클래스로 나누는 이유는 네트워크 크기에 따라 구분하기 위해서다. 네트워크 범위가 커질수록 호스트 주소 범위는 작아지는 반비례 관계이기 때문이다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd3d85f6a-a48a-4cc7-920f-13f0af4165ef%2FUntitled.png?table=block&id=8af91102-c513-4d0a-b5dc-13de9aec11d0&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/d628464f38fd9d972774e53d236d654718156bb6a8282ab2ae0470294a013af8/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324664336438356636612d613438612d346363372d393230662d313366306166343136356566253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d38616639313130322d633531332d346430612d623564632d31336465396165633131643026737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 주로 A, B, C  클래스만 사용한다. D, E 클래스는 멀티캐스트용, 연구용으로 사용하기 때문이다.
 
@@ -66,19 +58,13 @@ C 클래스의 IP 주소를 32자리 2진수로 표현했을 때, 맨 앞자리 
 
 네트워크 주소 범위는 `110x xxxx. xxxx xxxx. xxxx xxxx`에서 2^21개, 호스트 주소 범위는 `xxxx xxxx` 에서 (2^8) - 2개이다.
 
-### 표로 보는 클래스
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1186a8ab-45f0-4fd1-96eb-857e681f3400%2FUntitled.png?table=block&id=c4107bf5-9ec3-4440-85ae-6dd40e4fbfb9&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 ## IP 주소 분류
 
 IP 주소는 사용 범위에 따라 공인 IP와 사설(가상) IP, 할당 방식에 따라 고정 IP와 유동 IP로 나눌 수 있다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe06f68a1-1841-469b-800a-742a6e7005c3%2FUntitled.png?table=block&id=5fdc5085-1308-4693-84f2-c44c17296153&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 ### 공인 IP 주소 vs 사설(가상) IP 주소
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F22fa2bad-5b49-42d2-ac16-b7f66e55d5da%2FUntitled.png?table=block&id=9f296ea9-ba50-4944-8fbd-586b3ceb9241&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/6fcc92c36e6d3833211e33882ab6d65379b75e2575e84d0826e39cd821630699/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324632326661326261642d356234392d343264322d616331362d623766363665353564356461253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d39663239366561392d626135302d343934342d386662642d35383662336365623932343126737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 공인 IP 주소는 공인 기관에서 할당한 IP 주소이며, 통신에서 쓰이는 실제 주소이자 공개된 주소이다. 공인 IP 주소를 알면 누구라도 그 주소를 토대로 연결된 기기에 접근이 가능하다.
 
@@ -88,7 +74,7 @@ IP 주소는 사용 범위에 따라 공인 IP와 사설(가상) IP, 할당 방�
 
 ### 고정 IP 주소 vs 유동 IP 주소
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdf8e475c-db8f-4013-9afa-6eefdcded392%2FUntitled.png?table=block&id=30dc62d0-8073-4a48-aea5-7e8a3d31eb04&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/eb076858127f3dc3520cbeab8706d73670a759de78b5d09101d2e8fb13b4570e/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324664663865343735632d646238662d343031332d396166612d366565666463646564333932253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d33306463363264302d383037332d346134382d616561352d37653861336433316562303426737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 보통의 가정에서는 사설 IP를 사용하는데, 이는 컴퓨터가 네트워크에 접속할 때마다 서버에 IP 주소 할당을 요청하고, 서버는 IP 주소 등의 네트워크 정보를 다시 전달해 최종적으로 컴퓨터가 IP 주소를 등록하는 과정을 거친다. 즉, 네트워크에 접속할 때마다 IP 주소가 변경될 수 있다.
 
@@ -130,13 +116,7 @@ MAC 주소가 필요한 것을 알게 되었으니, MAC 주소만 있으면 되�
 
 미국에 있는 제이온이 한국 친구 상우에게 편지를 보낸다고 생각해 보자. 우체국에 단순히 상우에게 편지를 보내 달라고 하면, 우체국은 어디로 편지를 보내야 하는지 알 수가 없을 것이다.  (상우는 이름이 절대 변하지 않는 MAC 주소 역할을 한다고 가정하겠습니다.) 그래서 '서울특별시 강남구 대치동' 이런 식으로 편지를 보낼 위치를 적어야 한다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F583c4fd1-f092-4529-b191-5582c589f65d%2FUntitled.png?table=block&id=1b8b984a-dd3c-4fe4-be9c-b31dcea2f311&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 우체국은 이제 맨 상위 계층 서울특별시를 우편을 싹 다 서울 특별시 집합 장소로 보낸다. 그리고 서울 특별시에 모인 우편물을 가지고 강남구로 보내고, 다시 대치동에게 분류해서 내보낸다. 이러한 주소를 계층형 주소라고 하는데, IP 주소도 계층형 주소이므로 IP 주소 체계의 네트워크는 계층 구조 네트워크라고 부른다. 참고로 우편 배달 시스템을 IP 프로토콜, 계층형 주소를 IP 주소라고 생각하면 된다. 이러한 원리로 수많은 컴퓨터 사이에서 범위를 차차 좁혀나가 상우가 어디 있는지 알 수 있다.
-
-### IP 주소 vs MAC 주소
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F57154546-0b8e-4b59-af94-f5f858f20931%2FUntitled.png?table=block&id=637d7c1f-d1df-4ec4-bfb4-07b12f0cf645&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
 
 **MAC 주소**
 
