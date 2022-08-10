@@ -8,9 +8,7 @@ Git은 **Github(깃허브)** 와 **Gitlab(깃랩)** 등의 대형 웹 버전 관
 
 대표적으로 사용되는 버전 관리 도구에는 GIT와 SVN(subversion)이 있다
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/09434a0a-1708-4c3e-b7da-e88069fc97f5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211027T130806Z&X-Amz-Expires=86400&X-Amz-Signature=c0e90bce0873b3e93db8d3b95a79c80b3afab4d7d514ecec15cf7c52c31669da&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
-
-[SVN vs. Git](https://www.notion.so/08eca449c3604c5190fdc91791ee812f)
+[SVN vs. Git](https://ckd12394.notion.site/11c81c7eb1f2436aafbf0b759dddca53?v=c84316cd00d947439354e9daad163270)
 
 **SVN**은 소스 변경 사항과 히스토리가 서버에 즉시 반영되기 때문에 변경 사항 및 히스토리 관리가 용이하다. 그러나 중앙 저장소 데이터 손실 시 복구가 어려우며, 서버와 클라이언트 간 버전 관리에 문제가 생긴다는 단점이 있다.
 
@@ -37,8 +35,6 @@ Git은 **Github(깃허브)** 와 **Gitlab(깃랩)** 등의 대형 웹 버전 관
 
 - **Tracked** : Git이 알고있는, 저장소에서 관리하는 파일. 스냅샷이 존재한다
 - **Untracked** : 그 외 파일
-
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/13952f57-2566-4b14-8f2d-58419232518d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211027T130829Z&X-Amz-Expires=86400&X-Amz-Signature=447047b9fe025455570592946590ae5b963a7ac521b5e325e308c79476283b21&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 Git File Lifecycle
 
@@ -152,8 +148,6 @@ staged 상태와 unstaged(unmodified, modified) 상태의 차이를 확인할 �
 
 ## 영역에 대해 잠시..
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e465d8bf-622e-4e5b-bdd3-0c9bd410a790/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211027T130851Z&X-Amz-Expires=86400&X-Amz-Signature=1547e4c933832f0ed140da6a3eccb079600dbaafcdb357de3d681cfb538e3b77&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
-
 - **Working Directory**
 로컬에서 실제 작업하고 있는 작업 공간이자, working tree라고도 불린다
 - **Staging Area / Index / Stage**
@@ -200,8 +194,6 @@ git reset —hard 명령어를 통해 HEAD를 옮기고 staging area를 비우�
 git checkout {branch} 명령어를 통해 HEAD를 브랜치의 HEAD로 옮기며, 브랜치도 변경된다
 
 reset과 유사해 보이지만, rest 는 HEAD를 옮겨서 staging area를 업데이트하는 것에 중심을 두는 반면, checkout은 working directory를 업데이트하는 것이 주요 목적이다
-
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d323ca89-5f4b-4da6-9336-d1738b9a231d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211027T130903Z&X-Amz-Expires=86400&X-Amz-Signature=28a15cb77a617079082b8c54e09b678325e41c029dff179e1e9084deffc091a6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 위 그림에서처럼 명령어를 통해 HEAD가 commit A를 가르키도록 변경하고자 할 때,
 reset 의 경우 HEAD가 가르키고 있는 develop branch를 commit A로 변경하며,
@@ -355,8 +347,6 @@ https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html
 Git이 로컬에서 관리되는 VCS 툴이라면, Github는 클라우드 방식으로 관리되는 VCS 서비스이다
 
 오픈소스를 공유하고 다른사람들과 협업하기 위해서는 깃허브에서 제공해주는 클라우드 서버를 이용하는 것이 편리하다
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44c67915-49f5-47a8-b414-c5b71356abe7/Untitled.png)
 
 # 기타
 
