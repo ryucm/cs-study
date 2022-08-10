@@ -6,8 +6,6 @@ HTTP(Hypertext Transfer Protocol)는 텍스트 기반의 통신 규약으로, �
 
 앞서 언급했듯이, HTTP는 서버/클라이언트 모델을 따른다. 클라이언트에서 요청을 보내면 서버는 요청을 처리해서 응답한다. 이때, HTML 문서 외에도 JSON 데이터나 XML 데이터 등의 정보를 주고 받을 수 있다. 참고로, 초기 HTTP는 오직 HTML 문서를 주고 받기 위해서 설계되었다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F66fb8c7d-9e4b-486a-aeb8-877cb1b72b62%2FUntitled.png?table=block&id=659c3962-7d9f-4030-8abb-3285bbc871a4&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 ### 클라이언트
 
 서버에 요청하는 클라이언트 소프트웨어(IE, Chrome, Firefox, ...)가 설치된 컴퓨터를 이용한다. 클라이언트는 URI를 이용해서 서버에 접속하고 데이터를 요청할 수 있다.
@@ -132,7 +130,7 @@ HTTP는 Connectionlss 방식으로 작동하는데, 이 방식은 클라이언�
 
 쿠키는 웹 브라우저가 보관하는 데이터다. 웹 서버는 쿠키를 생성하여 웹 브라우저에 정보를 전송할 수 있고, 쿠키는 key-value 형태로 웹 브라우저의 쿠키 저장소에 저장된다. 서버로부터 쿠키를 전달 받은 웹 브라우저는 이후 웹 서버에 요청을 보낼 때 쿠키를 헤더에 실어서 함께 전송한다. 이를 이용하면 웹 서버와 클라이언트는 필요한 값을 공유하고 상태를 유지할 수 있다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbae5019d-dea3-4868-bf84-9a45425dc78a%2FUntitled.png?table=block&id=f71eab72-a6a1-4526-b3ee-00be8871c212&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/3c08e2c43e146aca0ca1f905c90c28f86ef4103b770d7094e56a73610ee3c1df/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324662616535303139642d646561332d343836382d626638342d396134353432356463373861253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d66373165616237322d613661312d343532362d623365652d30306265383837316332313226737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 하지만 쿠키는 네트워크를 통해 전달 되기 때문에 중간에 쿠키를 탈취할 수 있다는 취약점이 있다. 쿠키에 바로 아이디와 비밀번호 값이 들어 있으면 위험하기 때문에 이를 보완하고자 세션이나 토큰이라는 방식을 도입할 수 있다.
 
@@ -144,13 +142,11 @@ HTTP는 Connectionlss 방식으로 작동하는데, 이 방식은 클라이언�
 
 쿠키와 세션을 종합하여 로그인이 이루어지는 과정을 살펴 보자. 우리는 로그인 정보를 웹 컨테이너 메모리의 세션 객체에 저장하게 되고, 클라이언트는 세션 ID를 전송하여 브라우저 고유 세션을 식별하게 된다. 이 후 세션 객체 내부에 로그인 여부를 확인할 수 있는 특정 속성이 존재하면 로그인한 것으로 판단할 수 있다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fda13c820-5cd8-41ed-a638-71b50fbd2e6a%2FUntitled.png?table=block&id=ce3e9392-1504-4127-b068-178b98553120&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 **토큰 (Token)**
 
 토큰 기반 인증의 방법으로 많은 웹 서버들은 JWT (JSON Web Token)을 사용한다. 토큰 기반 인증 방식은 유저의 정보가 서버에 저장되지 않는 무상태라는 특징이 있다. Flow는 다음과 같다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F48762422-a6ee-4628-92b0-c10884651226%2FUntitled.png?table=block&id=7360ce91-0011-4a91-bef4-4524a7648a67&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/de4b8158cb00ca1cf3e8743863e6efc8f0c842655b4c45a7d5cedf16fdd19de3/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324634383736323432322d613665652d343632382d393262302d633130383834363531323236253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d37333630636539312d303031312d346139312d626566342d34353234613736343861363726737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 - 유저가 로그인을 하고 서버에 세션을 이용해서 정보를 기록하는 대신, 토큰을 발급한다.
 - 클라이언트는 발급된 토큰을 Local Storage에 저장하거나, 토큰을 쿠키에 담아서 쿠키 저장소에 저장한다.
@@ -209,11 +205,9 @@ HTTP(Hyper Text Transfer Protoco)는 텍스트 기반의 통신 규약으로, �
 
 # HTTPS
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F701c1e31-8e7a-44a0-b70e-45566b2eea74%2FUntitled.png?table=block&id=ad32aff1-2485-43b4-bf53-985d3149a342&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/bd8e816cf2e9eca8e43ec808bc99046b76dd54baf1f22f714d51669678485590/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324637303163316533312d386537612d343461302d623730652d343535363662326565613734253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d61643332616666312d323438352d343362342d626635332d39383564333134396133343226737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 HTTPS는 Hypertext Transfer Protocol Secure의 약자로 보안이 강화된 HTTP 프로토콜이다. HTTP 프로토콜만으로 통신을 수행하면, 다음과 같이 평문 데이터가 모두 노출이 된다. 즉, 암호화되지 않은 데이터를 전송하기 때문에 서버와 클라이언트가 주고 받는 메시지를 외부에서 볼 수 있기 때문에 보안에 취약하다. 이러한 취약점을 보완하고자 만들어진 것이 바로 HTTPS다.
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc3dda29a-728b-4155-af11-3111dcc7a5ce%2FUntitled.png?table=block&id=bc54e408-c741-4780-8c3e-fedd33256ce0&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
 
 와이어 샤크를 이용하면 위와 같이 HTTP 패킷을 확인할 수 있는데, 유저의 민감한 데이터가 그대로 노출되는 것을 확인할 수 있다.
 
@@ -221,7 +215,7 @@ HTTPS는 Hypertext Transfer Protocol Secure의 약자로 보안이 강화된 HTT
 
 HTTPS는 SSL이라는 보안 프로토콜 위에서 동작하는 HTTP다. 그렇다면, SSL과 TLS가 무엇일까?
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4c42a919-df0b-4e8a-9937-c49460fa0216%2FUntitled.png?table=block&id=9ed2d997-37b7-49a0-bd10-02f9bf5fc8c2&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/81bfedac6a2cdc596c91a3b9644aa9399464b8d30c2f7647a5b37c6e3427ca30/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324634633432613931392d646630622d346538612d393933372d633439343630666130323136253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d39656432643939372d333762372d343961302d626431302d30326639626635666338633226737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 SSL은 Secure Socket Layer의 약어로, 응용 계층과 전송 계층 사이에서 동작하는 보안 소켓 계층을 뜻한다. 인터넷 상에서 데이터를 안전하게 전송하기 위한 인터넷 암호화 통신 프로토콜이라고 생각하면 된다. SSL은 전자상거래 등의 보안을 위해 넷스케이프 사에서 처음 개발하였고, 시간이 지나 TLS로 표준화하였다.
 
