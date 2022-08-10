@@ -14,8 +14,6 @@ Handshake는 악수를 의미하는데, 통신을 하는 브라우저와 웹 서
 
 비대칭 키는 공개 키와 개인 키로 암호화 및 복호화를 수행한다. 즉, 공개 키로 데이터를 암호화하면 반드시 개인 키로만 복호화 가능하고, 개인 키로 데이터를 암호화하면 공개 키로만 복호화 할 수 있다. 참고로 개인 키는 비밀 키 혹은 비공개 키라고도 부른다. 비대칭 키는 보안성이 좋지만, 구현이 하기 어렵고 암호화 및 복호화 속도가 느리다는 단점이 있다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F23eda87f-09b3-4fa8-b413-b2e26929d380%2FUntitled.png?table=block&id=aac65669-e23f-4531-bc07-aefa2a50b97d&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-
 **암호화 - 공개 키, 복호화 - 개인 키**
 
 진짜 데이터를 암호화하여 보호하기 위한 목적이다.
@@ -30,32 +28,18 @@ SSL은 대칭 키 방식과 비대칭 키 방식을 섞어서 사용한다. SSL 
 
 1. A가 B로 접속 요청을 보낸다.
 2. B는 A에게 자신의 공개 키를 전송한다. (B는 미리 공개 키와 개인 키를 만들어 두었다고 가정)
-    
-    
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F154e3036-e2b1-46df-a5b6-a04d172991a1%2FUntitled.png?table=block&id=e5768e2b-e543-4573-983f-a649e2c03e96&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-    
 3. A는 자신의 대칭 키를 B에서 전달 받은 B의 공개 키로 암호화한다.
-    
-    
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F433ed4ee-4442-493a-b05b-10438480b2f6%2FUntitled.png?table=block&id=472c5d14-d192-4cf6-a6bc-00f84321ad91&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-    
 4. 이렇게 암호화한 자신의 대칭 키를 B에게 전달한다.
 5. B는 자신의 개인 키로 복호화 하여 A의 대칭 키를 얻어 낸다.
     
     
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3317599a-436f-4655-bd07-9262f7ed514b%2FUntitled.png?table=block&id=4dfb7aca-2edf-460a-a5dc-29daa7461fa2&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+    ![Untitled](https://camo.githubusercontent.com/6834715927f6a28653794e753b2c3550519ee03c246f3de1d4943d52d1a0cf92/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324633333137353939612d343336662d343635352d626430372d393236326637656435313462253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d34646662376163612d326564662d343630612d613564632d32396461613734363166613226737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
     
 6. 이렇게 얻어낸 대칭 키를 활용해서 A와 B는 안전하게 통신한다.
-    
-    
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F554e51a2-ffe4-4b2b-bfd0-8b1fbcedf47d%2FUntitled.png?table=block&id=2fb03909-41f0-4ab6-8ae6-a3101a1b2cd7&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-    
 
 즉, 데이터 암호화와 복호화를 위한 한 쪽의 대칭 키를 다른 쪽의 공개 키로 암호화하여 전송하면, 반대편에서 자신의 개인 키로 복호화하여 그 반대편의 대칭 키를 알아내고, 이 대칭 키를 바탕으로 통신을 하게 된다.
 
 ## SSL Handshake의 동작 과정
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5b346abc-2d80-445e-a483-38aad7f95e35%2FUntitled.png?table=block&id=41600695-95be-452e-b572-330710e50728&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
 
 파란색 칸과 노란색 칸은 네트워크 상에서 전달되는 IP 패킷을 표현한 것이다. 파란색 칸에 해당하는 SYN, SYN ACK, ACK는 TCP 레이어의 3-way handshake로, HTTPS가 TCP 기반의 프로토콜이므로 SSL Handshke에 앞서 연결을 생성하기 위해 실시하는 과정이다. 노란색 칸에 해당하는 패킷들이 SSL Handshake라고 보면 된다.
 
@@ -79,17 +63,15 @@ SSL 인증서에는 서비스의 정보 (인증서를 발급한 CA, 서비스의
 
 클라이언트가 서버에 연결을 시도하며 전송하는 패킷이다. 자신이 사용 가능한 Cipher Suite 목록, Session ID, SSL 프로토콜 버전, Random Byte 등을 전달한다. Cipher Suite는 SSL 프로토콜 버전, 인증서 검정, 데이터 암호화 프로토콜, Hash 방식 등의 정보를 담고 있는 존재로, 선택된 Cipher Suite의 알고리즘에 따라 데이터를 암호화하게 된다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F32e95a30-ba76-4010-a285-cc2585e22a1f%2FUntitled.png?table=block&id=fe6c5244-e0fd-4104-9b3b-17b961e25cc2&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/e0ebb68657f25fe578dd4b50c2b8ff1e36d47ddf118cfbbf4eda1dc816867a2b/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324633326539356133302d626137362d343031302d613238352d636332353835653232613166253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d66653663353234342d653066642d343130342d396233622d31376239363165323563633226737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 위 사진처럼 클라이언트가 사용 가능한 Cipher Suite를 서버에 제공하는 것을 알 수 있다. 참고로 Cipher Suite의 구성은 다음과 같다.
-
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe38adbc9-7142-4f0d-94a5-5fbf01d44337%2FUntitled.png?table=block&id=090005e9-b478-43ce-9e0c-6c4098284cb3&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
 
 ### ServerHello
 
 서버는 클라이언트가 보내 온 ClientHello 패킷을 받아 Cipher Suite 중 하나를 선택한 다음 클라이언트에게 이를 알린다. 또한, 자신의 SSL 프로토콜 버전 등도 같이 보낸다. 아래 사진을 보면 ClientHello에서 17개였던 Cipher Suite와 달리 Sever가 선택한 한 줄만 존재하는 것을 알 수 있다.
 
-![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc5b99fd0-bacb-4b65-a7c4-ab4fa5b84921%2FUntitled.png?table=block&id=5b1da355-68a8-4857-8e0f-8c0542d767fd&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+![Untitled](https://camo.githubusercontent.com/0e0b112ffc33255dcdf07308468efafad3b38e3b93c7e9549ef5f3dee7512970/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324663356239396664302d626163622d346236352d613763342d616234666135623834393231253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d35623164613335352d363861382d343835372d386530662d38633035343264373637666426737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
 
 ### Certificate
 
@@ -122,43 +104,29 @@ ChangeCipherSpec 패킷은 클라이언트와 서버 모두가 서로에게 보�
 1. 사이트는 CA에 사이트 정보와 사이트 공개 키를 보낸다.
     
     
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1317a5f5-613e-4fce-a97f-90ca2a28b4ca%2FUntitled.png?table=block&id=a356f3f4-4ef1-4300-9e0d-dbaa8c570333&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+    ![Untitled](https://camo.githubusercontent.com/a97b17917ae878d770e148b5b2012925dd080c071f4d73f79d6ac2bae71594cd/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324631333137613566352d363133652d346663652d613937662d393063613261323862346361253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d61333536663366342d346566312d343330302d396530642d64626161386335373033333326737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
     
 
 2. CA는 자신의 개인 키로 사이트 정보와 사이트 공개 키에 대해 암호화하여 인증서를 생성한 뒤, 인증서를 사이트에게 전달한다.
-    
-    
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb93ef659-1955-45e7-a578-1a6f0d0172ea%2FUntitled.png?table=block&id=8746883e-917d-43e8-95ad-8569039ff746&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-    
-
 3. 사용자는 CA의 공개 키가 브라우저에 내장되어 있다고 가정한다.
 4. 사용자는 사이트에 접속을 요청한다. (ClientHello)
 5. 사이트는 사용자의 Cipher Suite 중 하나를 고르고, 자신의 SSL 프로토콜 버전을 사용자에게 알린다. (SeverHello)
 6. 사이트는 자신의 사이트 인증서를 사용자에게 전송한다. (Certificate)
     
     
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8204f355-f1a7-4030-a665-c6cfcff5c437%2FUntitled.png?table=block&id=a05dc0b7-1366-45b3-8abe-618c2f4e0eab&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+    ![Untitled](https://camo.githubusercontent.com/7b0fa57eed7bde90b38b7bac43a0d1a4b549540198d362fed9b3a75dff4fff88/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324638323034663335352d663161372d343033302d613636352d633663666366663563343337253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d61303564633062372d313336362d343562332d386162652d36313863326634653065616226737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
     
-7. 사용자는 브라우저에 내장된 CA의 공개 키를 이용하여 사이트 인증서를 복호화하면서 인증서가 유효한지 검증하고, 사이트의 공개 키를 가져온다. (Certificate & ServerHello Done) 참고로, 현재 사이트의 공개 키가 있으므로 Server Key Exchange 과정은 생략된다. 
-    
-    
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa2a55557-c0f8-4ff3-a627-8daa5e3e6470%2FUntitled.png?table=block&id=9bae1ccb-9c1f-48fb-8b41-72695cb590ac&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-    
+7. 사용자는 브라우저에 내장된 CA의 공개 키를 이용하여 사이트 인증서를 복호화하면서 인증서가 유효한지 검증하고, 사이트의 공개 키를 가져온다. (Certificate & ServerHello Done) 참고로, 현재 사이트의 공개 키가 있으므로 Server Key Exchange 과정은 생략된다.
 
 8. 사용자는 자신이 전달할 데이터를 암호화 할 대칭 키를 만들고, 그 대칭 키를 사이트 공개 키로 암호화한다. (Client Key Exchange)
     
     
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9b50cbcb-a15d-4b30-8cc5-e08459644719%2FUntitled.png?table=block&id=fb962e7d-bb2e-4c83-be8c-e05bee5d8eb4&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
+    ![Untitled](https://camo.githubusercontent.com/90234000e0d0e9c545a4938c8948b1fbe7f36fe57968cdea035f8074b20974d3/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324673332d75732d776573742d322e616d617a6f6e6177732e636f6d2532467365637572652e6e6f74696f6e2d7374617469632e636f6d25324639623530636263622d613135642d346233302d386363352d653038343539363434373139253246556e7469746c65642e706e673f7461626c653d626c6f636b2669643d66623936326537642d626232652d346338332d626538632d65303562656535643865623426737061636549643d62343533626438352d636231352d343462352d626632652d3538306165646138303734652677696474683d32303030267573657249643d38303335326331322d363561342d343536322d396133362d3231373965643064666666622663616368653d7632)
     
 
 9. 암호화한 대칭 키를 사이트에게 전달한다. (사용자 입장: ChangeCipherSpec, Finished)
 10.  사이트는 자신의 개인 키를 사용하여 사용자 대칭 키를 복호화하여 사용자 대칭 키를 얻어 낸다. (사이트 입장: ChangeCipherSpec, Finished)  
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F05b88f3f-f35e-43de-af62-e56fb2fb6c95%2FUntitled.png?table=block&id=2fad553d-d727-4758-9e77-1269ed5f1cb5&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
 11. 이렇게 얻은 대칭 키를 활용하여 서로가 서로의 데이터를 안전하게 복호화 하면서 통신할 수 있다.  (SSL Handshake 종료)
-    
-    
-    ![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe3c8f76d-6bfa-41d8-90ef-9e79c058e581%2FUntitled.png?table=block&id=faee7c59-1e73-41aa-94f4-1bdcccc2ad2b&spaceId=b453bd85-cb15-44b5-bf2e-580aeda8074e&width=2000&userId=80352c12-65a4-4562-9a36-2179ed0dfffb&cache=v2)
-    
 
 ## 출처
 
