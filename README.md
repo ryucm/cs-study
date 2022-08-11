@@ -27,3 +27,9 @@
 - [OSI 7 계층](https://github.com/ryucm/cs-study/blob/main/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/osi%207%EA%B3%84%EC%B8%B5.md)
 - [라우팅](https://github.com/ryucm/cs-study/blob/main/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EB%9D%BC%EC%9A%B0%ED%8C%85.md)
 - [로드밸런서](https://github.com/ryucm/cs-study/blob/main/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%84%9C.md)
+
+## 자료구조
+- [Array와 List](https://github.com/ryucm/cs-study/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/Array%EC%99%80%20List.md)
+- [Heap](https://github.com/ryucm/cs-study/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/Heap.md)
+- [Stack & Queue](https://github.com/ryucm/cs-study/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/Stack%20%26%20Queue.md)
+- [Tree](https://github.com/ryucm/cs-study/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/Tree.md)
